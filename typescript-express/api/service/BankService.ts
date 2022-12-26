@@ -1,5 +1,5 @@
-export class BankService {
-  static registerBankAccount(): string {
-    return "계좌 등록에 성공했습니다.";
-  }
-}
+import { injectable } from "tsyringe";
+import BaseService from "./BaseService";
+
+@injectable()
+export default class BankService extends BaseService {}

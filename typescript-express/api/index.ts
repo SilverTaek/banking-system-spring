@@ -1,7 +1,8 @@
-import express from "express";
-import BankRoutes from "./routes/BankRoutes";
+import app from "./app";
+import * as db from "./common/mysql/env";
 
-const app = express();
-app.use("/banks", BankRoutes);
-
-app.listen(5000);
+const PORT = process.env.PORT || 8088;
+db.db_connect();
+app.listen(PORT, () => {
+  console.log(`Server is running http://localhost:${PORT}`);
+});

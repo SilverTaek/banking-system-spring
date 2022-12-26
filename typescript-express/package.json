@@ -10,7 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "ts-node": "^10.9.1"
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.9.1",
+    "tsyringe": "^4.7.0",
+    "typedi": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/mysql": "^2.15.21"
   }
 }

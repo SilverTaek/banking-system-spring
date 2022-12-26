@@ -1,9 +1,10 @@
-import { BankService } from "../service/BankService";
-import { Request, Response } from "express";
+import { autoInjectable } from "tsyringe";
+import BankService from "../service/BankService";
+import BaseController from "./BaseController";
 
-export class BankController {
-  static registerBankAccount(req: Request, res: Response) {
-    res.send("계좌 등록에 성공했습니다.");
-    // return BankService.registerBankAccount();
+@autoInjectable()
+export default class BankController extends BaseController {
+  constructor(bankService: BankService) {
+    super(bankService);
   }
 }

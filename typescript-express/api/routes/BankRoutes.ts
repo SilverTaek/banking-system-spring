@@ -1,8 +1,12 @@
 import { Router } from "express";
-import { BankController } from "../controllers/BankController";
+import BankController from "../controllers/BankController";
+import BankService from "../service/BankService";
 
-const router: Router = Router();
+const bankRouter = Router();
 
-router.get("/", BankController.registerBankAccount);
+const bankService = new BankService();
+const bankController = new BankController(bankService);
 
-export default router;
+bankRouter.post("/", bankController.create);
+
+export default bankRouter;
